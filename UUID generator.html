@@ -1,0 +1,98 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>UUID GENERATOR</title>
+  <style>
+  .hasil{
+    background-color: linear-gradient(to left, #b4b4b4, #5e5d5d);
+    border: none;
+  }
+  .hasil::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: linear-gradient(to right, #b4b4b4, #605b5b);
+    opacity: 0;
+    transition: opacity 0.10s ease;
+    z-index: -3;
+  }
+  .hasil:active::after {
+    opacity: 1;
+  }
+.btn-vairon {
+  position: relative;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  border: none;
+  padding: 12px 24px;
+  color: white;
+  z-index: 1;
+  overflow: hidden;
+}
+.btn-vairon::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, #f093fb, #f5576c); /* Gradient Klik */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+.btn-vairon:active::after {
+  opacity: 1;
+}
+.btn-vairon1 {
+  position: relative;
+  background: linear-gradient(to right, #5e03b6, #baa8ff);
+  border: none;
+  padding: 12px 24px;
+  color: white;
+  z-index: 1;
+  overflow: hidden;
+}
+.btn-vairon1::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, #9ddbff, #00f2fe); /* Gradient Klik */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+.btn-vairon1:active::after {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+<h1>UUID Generator V4</h1>
+<button class="btn-vairon" style="font-size: 1.5em;" onclick="generate()">Generate</button>
+<button class="hasil" id="jeneret"></button>
+<h1>UUID Generator V2</h1>
+<button class="btn-vairon1" style="font-size: 1.5em;" onclick="uuid2()">Generate</button>
+<button class="hasil" id="generet"></button>
+<p>#VGSG</p>
+<p>#Vairon Ganteng</p>
+<p>#Serva Gendeng</p>
+<script>
+ function uuid2() {
+   const uuid2 = 'xxxxxxxx-xxxx-2xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0,
+        v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+  document.getElementById('generet').innerText = uuid2;
+ }
+ function generate() {
+  const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0,
+        v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+  document.getElementById('jeneret').innerText = uuid;
+}
+</script>
+</body>
+</html>
